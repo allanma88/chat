@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Chat.Server.Extensions
 {
-    public static class UserExtensions
+    public static class UserExtension
     {
         public static void AddUserService(this IServiceCollection services, Action<PasswordOptions> configure)
         {

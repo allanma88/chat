@@ -1,6 +1,8 @@
 using Chat.Server.Database;
 using Chat.Server.Extensions;
+using Chat.Server.Hubs;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,11 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
-builder.Services.AddAuthorization(options =>
-{
-    // By default, all incoming requests will be authorized according to the default policy.
-    //options.FallbackPolicy = options.DefaultPolicy;
-});
+builder.Services.AddAuthorization();
+
+builder.Services.AddSignalrService();
+
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<ChatContext>(options=> options.UseNpgsql(builder.Configuration["DatabaseConnStr"]));
@@ -39,5 +40,7 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapControllers();
+
+app.MapHub<ChatHub>("/chat");
 
 app.Run();

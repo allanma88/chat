@@ -16,7 +16,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Identity.Web" Version="1.16.0" />
     <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.16.0" />
-    <!--<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />-->
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.29" />
   </ItemGroup>
 
