@@ -1,10 +1,10 @@
 # Architecture
 
-This project is not a fully functional project, only implement the features of assignment, lack of some important parts, like authentication, authorization, UI
+This project is not a fully functional project, only implement the features of assignment, lack of some important parts, like authentication, authorization, UI.
 
 ## Extensions
 
-The extension for the  start up of program, we currently only defined the user extension for configuration of user service.
+The extension for the  start up of program, we currently only defined the user and signalr extension.
 For a real product, should contains more extension like log, graceful shutdown, monitor
 
 ## Controllers
@@ -34,6 +34,8 @@ the model for service and web layer
 + run the src\Chat.Server
 
 # User Management
+
+For demo purpose, I didn't use the Microsoft Identity framework, it's complex and if use the Microsoft Identity framework, there is no need to implement the User register and login API.
 
 ### Register
 
